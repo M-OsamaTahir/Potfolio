@@ -344,13 +344,11 @@ export function CVTemplate() {
               <MapPin className="w-4 h-4" />
               <span>{personalInfo.location}</span>
             </div>
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <Globe className="w-4 h-4" />
               <span>{personalInfo.website}</span>
-            </div>
-          </div>
-
-          <div className="mt-4 flex gap-4">
+            </div> */}
+             <div className="mt-auto flex gap-4">
             <a
               href={personalInfo.github}
               target="_blank"
@@ -370,6 +368,9 @@ export function CVTemplate() {
               <span>LinkedIn</span>
             </a>
           </div>
+          </div>
+
+         
         </header>
 
         {/* Summary */}
