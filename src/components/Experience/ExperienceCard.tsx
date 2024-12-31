@@ -21,8 +21,8 @@ export function ExperienceCard({ title, company, location, period, description }
           
           <div className="flex flex-wrap gap-4 text-sm text-gray-600 mt-3">
             <div className="flex items-center gap-1">
-              <MapPin className="w-4 h-4 text-teal-600" />
-              <span>{location}</span>
+              {/* <MapPin className="w-4 h-4 text-teal-600" /> */}
+              {/* <span>{location}</span> */}
             </div>
             <div className="flex items-center gap-1">
               <Calendar className="w-4 h-4 text-teal-600" />

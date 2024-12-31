@@ -27,7 +27,8 @@ export function Experience() {
           </div>
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">Professional Journey</h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            Over 7 years of experience transforming complex data challenges into actionable insights
+         
+"Making data speak in a language that resonates with everyone, shaped by key experiences."
           </p>
           
           <button

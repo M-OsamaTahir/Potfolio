@@ -1,14 +1,13 @@
 
 
-
 // import React, { useRef } from 'react';
-// import jsPDF from 'jspdf';
-// import html2canvas from 'html2canvas';
+// // import jsPDF from 'jspdf';
+// // import html2canvas from 'html2canvas';
 // import {
 //   Mail,
 //   Phone,
 //   MapPin,
-//   Globe,
+//   // Globe,
 //   Github,
 //   Linkedin,
 //   Award,
@@ -23,47 +22,53 @@
 //   certifications,
 //   experience,
 // } from './cv-data';
+// import pdf from "../pdf/Muhammad Osama Tahir_Resume.pdf"
 
 // export function CVTemplate() {
 //   const pdfRef = useRef<HTMLDivElement>(null);
 
+//   // const exportToPDF = async () => {
+//   //   const element = pdfRef.current;
+//   //   if (!element) return;
+  
+//   //   // Use html2canvas to capture the element's content
+//   //   const canvas = await html2canvas(element, { scale: 2 });
+//   //   const imgData = canvas.toDataURL('image/png');
+  
+//   //   const pdf = new jsPDF('p', 'mm', 'a4');
+//   //   const pdfWidth = pdf.internal.pageSize.getWidth();
+//   //   const pdfHeight = pdf.internal.pageSize.getHeight();
+  
+//   //   // Calculate the height of the full content
+//   //   const contentHeight = (canvas.height * pdfWidth) / canvas.width;
+  
+//   //   // Start by adding the first page with the content image
+//   //   pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+  
+//   //   // If the content height exceeds one page, we will handle pagination
+//   //   if (contentHeight > pdfHeight) {
+//   //     let remainingHeight = contentHeight - pdfHeight;
+//   //     let yOffset = -pdfHeight;
+  
+//   //     // Add additional pages if necessary
+//   //     while (remainingHeight > 0) {
+//   //       pdf.addPage();
+//   //       pdf.addImage(imgData, 'PNG', 0, yOffset, pdfWidth, pdfHeight);
+//   //       remainingHeight -= pdfHeight;
+//   //       yOffset -= pdfHeight;  // Adjust the yOffset to shift content upwards
+//   //     }
+//   //   }
+  
+//     // Save the generated PDF
+//   //   pdf.save('CV_Muhammad_Osama_Tahir.pdf');
+//   // };
+
 //   const exportToPDF = async () => {
-//     const element = pdfRef.current;
-//     if (!element) return;
-
-//     const canvas = await html2canvas(element, { scale: 2 });
-//     const imgData = canvas.toDataURL('image/png');
-//     const pdf = new jsPDF('p', 'mm', 'a4');
-//     const pdfWidth = pdf.internal.pageSize.getWidth();
-//     const pdfHeight = pdf.internal.pageSize.getHeight();
-//     const contentHeight = canvas.height * pdfWidth / canvas.width;
-
-//     // Add the first page
-//     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-
-//     // Check if content exceeds one page
-//     if (contentHeight > pdfHeight) {
-//       let remainingHeight = contentHeight - pdfHeight;
-//       let yOffset = -pdfHeight; // Start the next page from where the first page ends
-
-//       while (remainingHeight > 0) {
-//         pdf.addPage();
-//         pdf.addImage(
-//           imgData,
-//           'PNG',
-//           0,
-//           yOffset, // Move the content upwards to fit the next page
-//           pdfWidth,
-//           pdfHeight
-//         );
-//         remainingHeight -= pdfHeight;
-//         yOffset -= pdfHeight;
-//       }
-//     }
-
-//     // Save the PDF
-//     pdf.save('CV_Muhammad_Osama_Tahir.pdf');
+//     const pdfPath = '../pdf/Muhammad Osama Tahir_Resume.pdf'; // Path relative to the public folder
+//     window.open(pdfPath, '_blank'); // Open the file in a new tab
 //   };
+  
+  
 
 //   return (
 //     <div>
@@ -106,13 +111,11 @@
 //               <MapPin className="w-4 h-4" />
 //               <span>{personalInfo.location}</span>
 //             </div>
-//             <div className="flex items-center gap-2">
+//             {/* <div className="flex items-center gap-2">
 //               <Globe className="w-4 h-4" />
 //               <span>{personalInfo.website}</span>
-//             </div>
-//           </div>
-
-//           <div className="mt-4 flex gap-4">
+//             </div> */}
+//              <div className="mt-auto flex gap-4">
 //             <a
 //               href={personalInfo.github}
 //               target="_blank"
@@ -132,6 +135,9 @@
 //               <span>LinkedIn</span>
 //             </a>
 //           </div>
+//           </div>
+
+         
 //         </header>
 
 //         {/* Summary */}
@@ -140,29 +146,28 @@
 //         </section>
 
 //         {/* Experience */}
-// <section className="mb-8">
-//   <div className="flex items-center gap-2 mb-4">
-//     <Briefcase className="w-5 h-5 text-teal-600" />
-//     <h2 className="text-xl font-bold text-gray-900">Experience</h2>
-//   </div>
-//   <div className="space-y-4">
-//     {experience.map((job, index) => (
-//       <div key={index} className="flex justify-between items-start">
-//         <div>
-//           <h3 className="font-semibold text-gray-900">{job.position}</h3>
-//           <p className="text-gray-600 text-justify">{job.company}</p> {/* Justified text */}
-//           <p className="text-sm text-gray-500 text-justify">{job.period}</p> {/* Justified text */}
-//           <ul className="mt-2 text-gray-600 list-disc pl-6 text-justify">
-//             {job.responsibilities.map((responsibility, i) => (
-//               <li key={i}>{responsibility}</li>
+//         <section className="mb-8">
+//           <div className="flex items-center gap-2 mb-4">
+//             <Briefcase className="w-5 h-5 text-teal-600" />
+//             <h2 className="text-xl font-bold text-gray-900">Experience</h2>
+//           </div>
+//           <div className="space-y-4">
+//             {experience.map((job, index) => (
+//               <div key={index} className="flex justify-between items-start">
+//                 <div>
+//                   <h3 className="font-semibold text-gray-900">{job.position}</h3>
+//                   <p className="text-gray-600 text-justify">{job.company}</p>
+//                   <p className="text-sm text-gray-500 text-justify">{job.period}</p>
+//                   <ul className="mt-2 text-gray-600 list-disc pl-6 text-justify">
+//                     {job.responsibilities.map((responsibility, i) => (
+//                       <li key={i}>{responsibility}</li>
+//                     ))}
+//                   </ul>
+//                 </div>
+//               </div>
 //             ))}
-//           </ul>
-//         </div>
-//       </div>
-//     ))}
-//   </div>
-// </section>
-
+//           </div>
+//         </section>
 
 //         {/* Skills */}
 //         <section className="mb-8">
@@ -191,24 +196,23 @@
 
 //         {/* Education */}
 //         <section className="mb-8">
-//   <div className="flex items-center gap-2 mb-4">
-//     <GraduationCap className="w-5 h-5 text-teal-600" />
-//     <h2 className="text-xl font-bold text-gray-900">Education</h2>
-//   </div>
-//   <div className="space-y-4">
-//     {education.map((edu, index) => (
-//       <div key={index} className="flex justify-between items-start">
-//         <div>
-//           <h3 className="font-semibold text-gray-900">{edu.degree}</h3>
-//           <p className="text-gray-600">{edu.school}</p>
-//           <p className="text-gray-500">{edu.city}</p> {/* Displaying city */}
-//         </div>
-//         <span className="text-sm text-gray-500">{edu.city}</span> {/* Displaying city again if needed */}
-//       </div>
-//     ))}
-//   </div>
-// </section>
-
+//           <div className="flex items-center gap-2 mb-4">
+//             <GraduationCap className="w-5 h-5 text-teal-600" />
+//             <h2 className="text-xl font-bold text-gray-900">Education</h2>
+//           </div>
+//           <div className="space-y-4">
+//             {education.map((edu, index) => (
+//               <div key={index} className="flex justify-between items-start">
+//                 <div>
+//                   <h3 className="font-semibold text-gray-900">{edu.degree}</h3>
+//                   <p className="text-gray-600">{edu.school}</p>
+//                   <p className="text-gray-500">{edu.city}</p>
+//                 </div>
+//                 {/* <span className="text-sm text-gray-500">{edu.city}</span> */}
+//               </div>
+//             ))}
+//           </div>
+//         </section>
 
 //         {/* Certifications */}
 //         <section>
@@ -238,16 +242,11 @@
 //   );
 // }
 
-// export default CVTemplate;
-
 import React, { useRef } from 'react';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
 import {
   Mail,
   Phone,
   MapPin,
-  Globe,
   Github,
   Linkedin,
   Award,
@@ -263,57 +262,39 @@ import {
   experience,
 } from './cv-data';
 
+
+
 export function CVTemplate() {
   const pdfRef = useRef<HTMLDivElement>(null);
 
-  const exportToPDF = async () => {
-    const element = pdfRef.current;
-    if (!element) return;
-  
-    // Use html2canvas to capture the element's content
-    const canvas = await html2canvas(element, { scale: 2 });
-    const imgData = canvas.toDataURL('image/png');
-  
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = pdf.internal.pageSize.getHeight();
-  
-    // Calculate the height of the full content
-    const contentHeight = (canvas.height * pdfWidth) / canvas.width;
-  
-    // Start by adding the first page with the content image
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-  
-    // If the content height exceeds one page, we will handle pagination
-    if (contentHeight > pdfHeight) {
-      let remainingHeight = contentHeight - pdfHeight;
-      let yOffset = -pdfHeight;
-  
-      // Add additional pages if necessary
-      while (remainingHeight > 0) {
-        pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, yOffset, pdfWidth, pdfHeight);
-        remainingHeight -= pdfHeight;
-        yOffset -= pdfHeight;  // Adjust the yOffset to shift content upwards
-      }
-    }
-  
-    // Save the generated PDF
-    pdf.save('CV_Muhammad_Osama_Tahir.pdf');
-  };
-  
+  const openAndDownloadPDF = () => {
+    // Path to the PDF file in the public folder
+    const pdfPath = '/Muhammad Osama Tahir_Resume.pdf';
 
+    // Open the file in a new tab
+    window.open(pdfPath, '_blank');
+
+    // Trigger the file download
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'Muhammad Osama Tahir_Resume.pdf'; // Optional: You can customize the filename here
+    document.body.appendChild(link);
+    link.click(); // Trigger the download
+    document.body.removeChild(link); // Clean up
+  };
   return (
-    <div>
-      {/* Download Button */}
-      <div className="flex justify-center mb-4">
+     <div>
+     {/* Download Button */}
+     <div className="flex justify-center mb-4">
         <button
-          onClick={exportToPDF}
+          onClick={openAndDownloadPDF}
           className="bg-teal-500 text-white px-2 py-1 rounded-md text-sm"
         >
           Download as PDF
         </button>
       </div>
+
+      
 
       {/* CV Template Content */}
       <div
@@ -344,33 +325,27 @@ export function CVTemplate() {
               <MapPin className="w-4 h-4" />
               <span>{personalInfo.location}</span>
             </div>
-            {/* <div className="flex items-center gap-2">
-              <Globe className="w-4 h-4" />
-              <span>{personalInfo.website}</span>
-            </div> */}
-             <div className="mt-auto flex gap-4">
-            <a
-              href={personalInfo.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-600 hover:text-teal-600"
-            >
-              <Github className="w-5 h-5" />
-              <span>GitHub</span>
-            </a>
-            <a
-              href={personalInfo.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-gray-600 hover:text-teal-600"
-            >
-              <Linkedin className="w-5 h-5" />
-              <span>LinkedIn</span>
-            </a>
+            <div className="mt-auto flex gap-4">
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 hover:text-teal-600"
+              >
+                <Github className="w-5 h-5" />
+                <span>GitHub</span>
+              </a>
+              <a
+                href={personalInfo.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-600 hover:text-teal-600"
+              >
+                <Linkedin className="w-5 h-5" />
+                <span>LinkedIn</span>
+              </a>
+            </div>
           </div>
-          </div>
-
-         
         </header>
 
         {/* Summary */}
@@ -441,7 +416,6 @@ export function CVTemplate() {
                   <p className="text-gray-600">{edu.school}</p>
                   <p className="text-gray-500">{edu.city}</p>
                 </div>
-                {/* <span className="text-sm text-gray-500">{edu.city}</span> */}
               </div>
             ))}
           </div>
